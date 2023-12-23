@@ -5,12 +5,12 @@ export default class Newitem extends Component {
     let{title,description,image,imageurl}=this.props;
     return (
       <div style={{margin:"10px"}}>
-        <div class="card" style={{width: "18em"}}>
-        <img src={image} class="card-img-top" alt="..." style={{height:"5cm"}}/>
-        <div class="card-body">
-        <h5 class="card-title">{title}</h5>
-        <p class="card-text">{description}</p>
-        <a href={imageurl} target='_blank' class="btn btn-primary" >Read More</a>
+        <div className="card" style={{width: "18em"}}>
+        <img src={image} className="card-img-top" alt="..." style={{height:"5cm"}}/>
+        <div className="card-body">
+        <h5 className="card-title">{title}</h5>
+        <p className="card-text">{description}</p>
+        <a href={imageurl} rel="noreferrer" target='_blank' className="btn btn-primary" >Read More</a>
         </div>
         </div>
       </div>

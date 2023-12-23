@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Newitem from './Newitem';
+import Spinner from './spinner';
+import PropTypes from 'prop-types'
 
 export default class Newscomponent extends Component {
     article= [
@@ -15,95 +17,76 @@ export default class Newscomponent extends Component {
             "urlToImage": "https://cleantechnica.com/wp-content/uploads/2023/12/Kia-EV9-at-Electrify-America-station-press-photo-2000x1000-1-800x400.png",
             "publishedAt": "2023-12-21T07:30:25Z",
             "content": "Sign up for daily news updates from CleanTechnica on email. Or follow us on Google News!\r\nElectrify America recently released a report on progress made in California. In the report, the company updat… [+4574 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Whitecoatinvestor.com"
-            },
-            "author": "Megan Scott",
-            "title": "Roth IRAs Are NOT a Bad Investment",
-            "description": "We thoroughly debunk a clickbaity article about why having a Roth IRA is supposedly a bad idea while also answering reader questions about buying houses now that interest rates are going up and how much you need to donate to justify a DAF.\nThe post Roth IRAs …",
-            "url": "https://www.whitecoatinvestor.com/roth-iras-are-not-a-bad-investment-346/",
-            "urlToImage": "https://www.whitecoatinvestor.com/wp-content/uploads/2023/12/Roth-IRAs-Are-NOT-a-Bad-Investment-346.png",
-            "publishedAt": "2023-12-21T07:30:20Z",
-            "content": "Derek Sall, founder of a website called Life and My Finances, wrote an article titled Why a Roth Is a Bad Idea ( Yes, You Can Lose Money). He criticized Roth IRAs, claiming they were a poor investmen… [+11017 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Tyden.cz"
-            },
-            "author": "TYDEN, www.tyden.cz, e-mail: webmaster@tyden.cz",
-            "title": "Sociální síť X zaznamenává rozsáhlé výpadky po celém světě",
-            "description": "Internetovou sociální síť X dnes postihly rozsáhlé výpadky, problémy hlásili uživatelé z celého světa, včetně České republiky. Vyplývá to z údajů serveru Downdetector. Podle serveru BBC trvaly globální výpadky déle než hodinu. Síť X loni ještě pod názvem Twit…",
-            "url": "https://www.tyden.cz/rubriky/zahranici/socialni-sit-x-zaznamenava-rozsahle-vypadky-po-celem-svete_564018.html",
-            "urlToImage": "https://www.tyden.cz/obrazek/202312/65840014b2c1c/crop-2744753-depositphotos-667549232-s.jpg",
-            "publishedAt": "2023-12-21T07:30:00Z",
-            "content": "Internetovou sociální sí X dnes postihly rozsáhlé výpadky, problémy hlásili uivatelé z celého svta, vetn eské republiky. Vyplývá to z údaj serveru Downdetector. Podle serveru BBC trvaly globální výpa… [+1526 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Forbes"
-            },
-            "author": "Peter Lyon, Contributor, \n Peter Lyon, Contributor\n https://www.forbes.com/sites/peterlyon/",
-            "title": "Toyota’s Next-Gen Electric SUV Will Challenge Ford, GM And Tesla",
-            "description": "Toyota to launch a chunky electric compact SUV in 2025 that will employ 4WD tech honed from 70 years of Land Cruiser heritage.",
-            "url": "https://www.forbes.com/sites/peterlyon/2023/12/21/toyotas-next-gen-electric-suv-will-challenge-ford-gm-and-tesla/",
-            "urlToImage": "https://imageio.forbes.com/specials-images/imageserve/6583e855131a369df058228e/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
-            "publishedAt": "2023-12-21T07:28:44Z",
-            "content": "Toyota released this image of the Compact Cruiser EV concept in 2022.\r\nPhoto courtesy of Toyota\r\nIn the face of an electric SUV onslaught from the likes of Mercedes-Benz, Audi and BMW over the past f… [+2045 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Deadline"
-            },
-            "author": "Dominic Patten",
-            "title": "X/Twitter Back Up After Elon Musk’s Social Media Platform Suffers Global Blackout Tonight",
-            "description": "Elon Musk’s X/Twitter is back up after going down tonight all over the world. The usually reactive owner of the struggling social media platform hasn’t said anything about what happened or why, but for users it was certainly like someone pulled the plug for n…",
-            "url": "https://deadline.com/2023/12/twitter-back-up-elon-musk-outage-1235679431/",
-            "urlToImage": "https://deadline.com/wp-content/uploads/2023/07/GettyImages-1549286524.jpg?w=1024",
-            "publishedAt": "2023-12-21T07:25:00Z",
-            "content": "Elon Musk‘s X/Twitter is back up after going down tonight all over the world. \r\nThe usually reactive owner of the struggling social media platform hasn’t said anything about what happened or why, but… [+2780 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Smartworld.it"
-            },
-            "author": "Alessandro Nodari",
-            "title": "Musk l'aveva promesso: il Cybertruck si può trasformare in una barca!",
-            "description": "Non c'è niente da fare, il Cybertruck è stato progettato specificatamente per attrarre l'attenzione. Il nuovo pickup elettrico di Tesla,...\r\nL'articolo Musk l'aveva promesso: il Cybertruck si può trasformare in una barca! sembra essere il primo su Smartworld.",
-            "url": "https://mobility.smartworld.it/cybertruck-optional-barca.html",
-            "urlToImage": "https://mobility.smartworld.it/images/2023/12/21/cybertruck_1200x675.jpg",
-            "publishedAt": "2023-12-21T07:24:00Z",
-            "content": "Non c'è niente da fare, il Cybertruck è stato progettato specificatamente per attrarre l'attenzione. Il nuovo pickup elettrico di Tesla, è appena stato consegnato ai primi fortunati acquirenti, ma se… [+2218 chars]"
         }
     ];
+    static defaultProps={
+        country:'in',
+        pagesize:'5',
+    }
+    static propTypes={
+        country:PropTypes.string,
+        pagesize:PropTypes.number
+    }
     constructor(){
         super();
         this.state={
-            article:this.article
+            article:this.article,
+            page:1,
+            data:"",
+            loading:false
         }
     }
      printitem=(element)=>(
-        <div><Newitem title={element.title?element.title:"Null"} description={element.description?element.description:"Null"} image={element.urlToImage?element.urlToImage:"https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"} imageurl={element.url?element.url:"/"}></Newitem></div>
+        <div key={element.url}><Newitem title={element.title?element.title:"Null"} description={element.description?element.description:"Null"} image={element.urlToImage?element.urlToImage:"https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"} imageurl={element.url?element.url:"/"}></Newitem></div>
      )
      async componentDidMount(){
-        let url="https://newsapi.org/v2/everything?q=tesla&from=2023-11-23&sortBy=publishedAt&apiKey=228a3007222b44a38d4c1f656e4268d1";
+        let url=`https://newsapi.org/v2/everything?q=${this.props.catogry}&from=2023-11-23&sortBy=publishedAt&apiKey=228a3007222b44a38d4c1f656e4268d1&page=1&pageSize=${this.props.pagesize}`;
+        this.setState({loading:true});
         let fectdata=await fetch(url);
         let parseddata= await fectdata.json();
-        this.setState({article:parseddata.articles})
+        this.setState({data:parseddata});
+        this.setState({article:parseddata.articles});
+        this.setState({loading:false});
      }  
-   
+    previouspage=async()=>{
+    console.log("Prevous page");
+    let url=`https://newsapi.org/v2/everything?q=${this.props.catogry}&from=2023-11-23&sortBy=publishedAt&apiKey=228a3007222b44a38d4c1f656e4268d1&page=${this.state.page-1}&pageSize=${this.props.pagesize}`;
+    this.setState({loading:true})
+    let fectdata=await fetch(url);
+    let parseddata= await fectdata.json();
+    this.setState({
+        article:parseddata.articles,
+        page:this.state.page-1,
+        loading:false
+    })
+   }
+    nextpage=async()=>{
+    console.log("next Page");
+    let url=`https://newsapi.org/v2/everything?q=${this.props.catogry}&from=2023-11-23&sortBy=publishedAt&apiKey=228a3007222b44a38d4c1f656e4268d1&page=${this.state.page+1}&pageSize=${this.props.pagesize}`;
+    this.setState({loading:true})    
+    let fectdata=await fetch(url);
+        let parseddata= await fectdata.json();
+        this.setState({
+            article:parseddata.articles,
+            page:this.state.page+1,
+            loading:false
+        })
+   }
   render() {
-    
+   
     return (
+        <>
+            <div className="text-center">
+        {this.state.loading===true &&<Spinner style={{width:"5cm"}}></Spinner>}
+        </div>
       <div style={{display:"flex",flexWrap:"wrap"}}>
-        {this.state.article.map(this.printitem)}
+        {this.state.article.map(this.printitem)?this.state.article.map(this.printitem):"The Article is Not There"}
       </div>
+      <div className="d-flex justify-content-around" style={{marginBottom:"30px"}}>
+      <button className="btn btn-primary" disabled={this.state.page<= 1} onClick={this.previouspage} >Previous</button>
+      <button  className="btn btn-primary" onClick={this.nextpage} disabled={this.state.page+1>Math.ceil(this.state.data.totalResults/this.props.pagesize)}>Next</button>
+      </div>
+      </>
     )
   }
 }
